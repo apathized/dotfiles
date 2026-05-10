@@ -1,21 +1,21 @@
-# dotfiles
 
-Personal config files for CachyOS + Hyprland setup. Managed with [GNU Stow](https://www.gnu.org/software/stow/).
+# Personal Dotfiles
 
-## Structure
+Originally based on HyDE with my own Keybindings and config adjustments, heavily recommend for starting on Hyprland!
 
-Each top-level directory is a Stow package mirroring `$HOME` paths.
+https://hydeproject.pages.dev/
 
-- `fastfetch/` → `~/.config/fastfetch/` (Persona 5 Royal themed system info)
+### Stowing and creating symlinks
 
-## Usage
+Download stow:
+```bash
+sudo pacman -S stow
+```
 
-Clone and stow:
-
+Access the Dotfiles:
 ```bash
 git clone git@github.com:apathized/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-stow fastfetch
 ```
 
 Stow a specific package:
