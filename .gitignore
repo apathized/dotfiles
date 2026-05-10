@@ -1,11 +1,9 @@
-# Editor backups
+#backups from the editors
 *~
 *.swp
 *.swo
 .DS_Store
 
-# OS junk
+#whatever this is
 Thumbs.db
-
-# Local-only overrides (if you ever add them)
 *.local
