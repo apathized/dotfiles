@@ -1,0 +1,5 @@
+#vscode hidden
+.vscode/
+#hyprlang config backup (HyDE, likely wont work.)
+hypr.backup.conf/
+*.legacy
