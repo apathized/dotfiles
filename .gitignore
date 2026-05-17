@@ -1,3 +1,5 @@
+kitty/.config/kitty/kitty-themes/
+
 #backups from the editors
 *~
 *.swp
@@ -7,3 +9,5 @@
 #whatever this is
 Thumbs.db
 *.local
+kitty/.config/kitty/*backup*
+.claude/
