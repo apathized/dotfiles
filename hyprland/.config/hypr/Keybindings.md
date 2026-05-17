@@ -24,12 +24,12 @@
 
 ## Focus Movement
 
-| Keybind | Action |
-|---------|--------|
-| `Super + Left` | Focus left |
+| Keybind         | Action      |
+| -----------------| -------------|
+| `Super + Left`  | Focus left  |
 | `Super + Right` | Focus right |
-| `Super + Up` | Focus up |
-| `Super + Down` | Focus down |
+| `Super + Up`    | Focus up    |
+| `Super + Down`  | Focus down  |
 
 ---
 
@@ -59,16 +59,16 @@ Hold to repeat.
 
 ## Workspaces
 
-| Keybind | Action |
-|---------|--------|
-| `Super + 1-0` | Switch to workspace 1–10 |
-| `Super + Shift + 1-0` | Move window to workspace 1–10 (follow) |
-| `Super + Alt + 1-0` | Move window to workspace 1–10 (silent) |
-| `Super + Ctrl + Right` | Next workspace |
-| `Super + Ctrl + Left` | Previous workspace |
-| `Super + Ctrl + Down` | Next empty workspace |
-| `Super + Ctrl + Up` | Last active workspace |
-| `Super + T` | Toggle split direction (top/side) |
+| Keybind                | Action                                 |
+| ------------------------| ----------------------------------------|
+| `Super + 1-0`          | Switch to workspace 1–10               |
+| `Super + Shift + 1-0`  | Move window to workspace 1–10 (follow) |
+| `Super + Alt + 1-0`    | Move window to workspace 1–10 (silent) |
+| `Super + Ctrl + Right` | Next workspace                         |
+| `Super + Ctrl + Left`  | Previous workspace                     |
+| `Super + Ctrl + Down`  | Next empty workspace                   |
+| `Super + Ctrl + Up`    | Last active workspace                  |
+| `Super + T`            | Toggle split direction (top/side)      |
 
 ---
 
@@ -99,58 +99,62 @@ Hold to repeat.
 
 ## Rofi / Launchers
 
-| Keybind | Action |
-|---------|--------|
-| `Super + Space` | Application finder |
-| `Super + Tab` | Window switcher |
-| `Super + Shift + E` | File finder |
-| `Super + /` | Keybinds hint |
-| `Super + ,` | Emoji picker |
-| `Super + .` | Glyph picker |
-| `Super + V` | Clipboard (quick) |
-| `Super + Shift + V` | Clipboard manager |
+| Keybind             | Action               |
+| ---------------------| ----------------------|
+| `Super + Space`     | Application finder   |
+| `Super + Tab`       | Window switcher      |
+| `Super + Shift + E` | File finder          |
+| `Super + /`         | Keybinds hint        |
+| `Super + ,`         | Emoji picker         |
+| `Super + .`         | Glyph picker         |
+| `Super + V`         | Clipboard (quick)    |
+| `Super + Shift + V` | Clipboard manager    |
 | `Super + Shift + A` | Rofi launcher select |
 
 ---
 
 ## Audio
 
-| Keybind | Action |
-|---------|--------|
-| `XF86AudioMute` | Toggle audio mute |
-| `XF86AudioLowerVolume` | Lower volume |
-| `XF86AudioRaiseVolume` | Raise volume |
-| `F20` | Mute mic (Keychron extra key) |
-| `XF86AudioMicMute` | Mute mic |
-| `XF86AudioPlay` | Play / Pause |
-| `XF86AudioPrev` | Previous track |
-| `XF86AudioNext` | Next track |
+| Keybind            | Action                             |
+| --------------------| ------------------------------------|
+| `F10`              | Toggle audio mute (Keychron remap) |
+| `XF86AudioMute`    | Toggle audio mute                  |
+| `XF86AudioMicMute` | Toggle mic mute                    |
 
 ---
 
-## Brightness
+## Brightness (Does not work atm)
 
-| Keybind | Action |
-|---------|--------|
-| `XF86MonBrightnessUp` | Increase brightness |
+| Keybind                 | Action              |
+| -------------------------| ---------------------|
+| `XF86MonBrightnessUp`   | Increase brightness |
 | `XF86MonBrightnessDown` | Decrease brightness |
 
 ---
 
 ## Screenshots & Color Picker
 
-| Keybind | Action |
-|---------|--------|
-| `Super + P` | Snip screen to clipboard |
-| `Super + Ctrl + P` | Freeze and snip to clipboard |
-| `Super + Shift + P` | Color picker |
+| Keybind             | Action                       |
+| ---------------------| ------------------------------|
+| `Super + P`         | Snip screen to clipboard     |
+| `Super + Ctrl + P`  | Freeze and snip to clipboard |
+| `Super + Shift + P` | Color picker                 |
 
 ---
 
 ## Utilities & Wallpaper
 
-| Keybind | Action |
-|---------|--------|
-| `Super + G` | Hypr game mode |
-| `Super + Alt + Right` | Next wallpaper |
-| `Super + Alt + Left` | Previous wallpaper |
+| Keybind               | Action             |
+| -----------------------| --------------------|
+| `Super + G`           | Hypr game mode     |
+| `Super + Alt + Right` | Next wallpaper     |
+| `Super + Alt + Left`  | Previous wallpaper |
+
+---
+
+## Reserved Keys (Not Bound in Hyprland)
+
+| Keybind | Action                             |
+| ---------| ------------------------------------|
+| `F11`   | Browser fullscreen (app default)   |
+| `F12`   | Vice-clipper — save last game clip |

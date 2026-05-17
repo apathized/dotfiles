@@ -86,23 +86,15 @@ hl.bind(mainmod .. " + V",         hl.dsp.exec_cmd("pkill -x rofi || hyde-shell 
 hl.bind(mainmod .. " + SHIFT + V", hl.dsp.exec_cmd("pkill -x rofi || hyde-shell cliphist"),         { description = "Clipboard manager" })
 hl.bind(mainmod .. " + SHIFT + A", hl.dsp.exec_cmd("pkill -x rofi || hyde-shell rofiselect"),       { description = "Rofi launcher select" })
 
---audio incld. redundancy keys
---hl.bind(", F10", hl.dsp.exec_cmd("hyde-shell volumecontrol -o m"), {description = "F10 Toggle Audio Mute, locked = true, repeating = true "})
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("hyde-shell volumecontrol -o m"), {description = "Toggle Audio Mute", locked = true, repeating = true })
---hl.bind(", F11", hl.dsp.exec_cmd("hyde-shell volumecontrol -o d"), {description = "Lower Volume, locked = true, repeating = true "})
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("hyde-shell volumecontrol -o d"), {description = "Lower Volume", locked = true, repeating = true })
---hl.bind(", F12", hl.dsp.exec_cmd("hyde-shell volumecontrol -o i"), {description = "Raise Volume", locked = true, repeating = true })
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("hyde-shell volumecontrol -o i"), {description = "Raise Volume", locked = true, repeating = true })
-hl.bind("F20", hl.dsp.exec_cmd("hyde-shell volumecontrol -i m"), {description = "Mute Volume using custom Key"}) --Custom key binding for Keychron keyboard. Extra key bound to "F20"
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("hyde-shell volumecontrol -i m"), {description = "Mute Volume using custom Key"})
---media playback incld. redundancy keys
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), {description = "Play and Pause A/V", locked = true})
---hl.bind(", F8", hl.dsp.exec_cmd("playerctl play-pause"), {description = "Play and Pause A/V", locked = true})
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), {description = "Previous A/V", locked = true })
---hl.bind(", F7", hl.dsp.exec_cmd("playerctl previous"), {description = "Previous A/V", locked = true })
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), {description = "Next A/V", locked = true })
---hl.bind(", F9", hl.dsp.exec_cmd("playerctl next"), {description = "Next A/V", locked = true })
+--audio keybinds. (Hint: some commands are bound to fit my keyboard, look for keychron specific descriptions)
+hl.bind("F10", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), {description = "F10 Toggle Audio Mute (Keychron Specific)", locked =true})
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), {description = "Mute Volume (Universal)"})
 
+
+--media playback. (Hint: some commands are bound to fit my keyboard, look for keychron specific descriptions)
+hl.bind("F8", hl.dsp.exec_cmd("playerctl play-pause"), {description = "Play and Pause A/V (Keychron Specific)", locked = true})
+hl.bind("F7", hl.dsp.exec_cmd("playerctl previous"), {description = "Previous A/V (Keychron Specific)", locked = true })
+hl.bind("F9", hl.dsp.exec_cmd("playerctl next"), {description = "Next A/V (Keychron Specific)", locked = true })
 
 --brightness keys incld. redundancy keys
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("hyde-shell brightnesscontrol i"), { description = "Increase brightness", locked = true, repeating = true})
