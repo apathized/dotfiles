@@ -15,11 +15,11 @@
 hl.monitor({ --Secondary 240HZ LED
     output = "DP-3",
     mode = "1920x1080@240",
-    position = "2560x360", --Bottom aligned. Note to future sense, by matching monitors for linux...
+    position = "2560x360", --Bottom aligned.
     scale = 1.0,
     vrr = 2,
     cm = "auto",
-    supports_hdr = 1, --check back later. monitor does support but might suck. compatibility only.
+    supports_hdr = 1,
     supports_wide_color = 0, 
 })
 
@@ -33,5 +33,5 @@ hl.monitor({ -- Primary 240HZ OLED
     cm = "auto",
     supports_hdr = 1,
     supports_wide_color = 1,
-    bitdepth = 10,
+    --bitdepth = 10, <-- causes weirdness on fullscreening, look into later.
 })
