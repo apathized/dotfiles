@@ -12,10 +12,10 @@
 hl.config({
     decoration = {
         --general window decoration
-        rounding = 8, --set to 0 by hyde, but thats ugly!
+        rounding = 6, --set to 0 by hyde, but thats ugly!
         rounding_power = 2, -- same thing!
-        active_opacity = .9,
-        inactive_opacity = .75,
+        active_opacity = .95,
+        inactive_opacity = .90,
         fullscreen_opacity = 1,
         
         --dim inactive windows, interesting idea to try?
@@ -30,7 +30,7 @@ hl.config({
         --window edge blur
         blur = {
             enabled = true,
-            size = 6,
+            size = 12,
             passes = 3, --can be reduced with little difference to naked eye for more performance.
             new_optimizations = true,
             xray = false,
@@ -40,7 +40,7 @@ hl.config({
         --shadows around windows
         shadow = {
             enabled = true,
-            range = 4, --set to 0 by hyde, shadow spread radius
+            range = 16, --set to 0 by hyde, shadow spread radius
             render_power = 4,
             color = "rgba(1a1a1aee)", -- standard dark shadow, somehow hyde uses a white square which is ugly!
         },
@@ -48,8 +48,8 @@ hl.config({
         --inner window glow, make sure to try this out!
         glow = {
             enabled = false,
-            range = 4,
-            render_power = 4,
+            range = 8,
+            render_power = 8,
             color = "rgba(e8d8a8ff)", -- champagne gold, soft cream may also work? test this out.
         }
     }

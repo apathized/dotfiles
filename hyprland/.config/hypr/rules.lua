@@ -5,64 +5,56 @@
     /_/   \__,_/_/\___/____/                    
 ]]--
 
---Window and Layer rules. Heavily based on HyDE's windowrules.conf file. Check them out
---https://github.com/HyDE-Project/HyDE
+--Window and Layer rules, custom opacities on a per-program basis to match aesthetics.
 --https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 
+--idle prevention on video playback
 hl.window_rule({
     idle_inhibit = "fullscreen",
-    match = { class = "^(.*mpv.*)$|^(.*vlc.*)$" }, --regex for VLC Media Player and mpv, prevents idle during media playback.
+    match = { class = "mpv|vlc|[Ss]potify|[Cc]ider|brave-browser|zen|[Jj]ellyfin" }, --regex for various audio, video and browser playback.
+})
+hl.window_rule({
+    idle_inhibit = "fullscreen",
+    match = { class = "org.jellyfin.JellyfinDesktop" }, --jellyfin fullscreen support
 })
 
-hl.window_rule({
-    idle_inhibit = "fullscreen",
-    match = { class = "^(.*[Ss]potify.*)$|^(.*[Cc]ider.*)$"}, --regex for Cider (apple music) and spotify players.
-})
-hl.window_rule({
-    idle_inhibit = "fullscreen",
-    match = { class = "^(.*brave-browser.*)$|^(.*zen.*)$" }, --browser catch all.
-})
-hl.window_rule({
-    idle_inhibit = "fullscreen",
-    match = { class = "^(.*[Jj]ellyfin.*)$" }, --jellyfin fullscreen support
-})
 
---PIP Window rules, May remove when HyDE gets removed!
-hl.window_rule({
-    name = "hyde_picture_in_picture",
-    match = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
-    tag = "+picture-in-picture",
-    float = true,
-    keep_aspect_ratio = true,
-    move = "(monitor_w*0.73) (monitor_h*0.72)",
-    size = "(monitor_w*0.25) (monitor_h*0.25)",
-    pin = true,
-})
+
 
 --opacity rules = (active, inactive, fullscreen)
 --browsers opacity rules
-hl.window_rule({ opacity = "0.9 0.9 1", match = { class = "^(brave-browser)$" } })
-hl.window_rule({ opacity = "0.9 0.9 1", match = { class = "^(zen)$" } })
+hl.window_rule({
+    opacity = "0.98 override 0.9 override 1",
+    match = { class = "brave-browser" },
+})
+hl.window_rule({
+    opacity = "0.95 override 0.9 override 1",
+    match = { class = "zen" },
+})
 
 --streaming clients
-hl.window_rule({ opacity = "0.7 0.7 1", match = { class = "^([Cc]ider)$" } })
-hl.window_rule({ opacity = "0.7 0.7 1", match = { class = "^([Ss]potify)$" } })
-hl.window_rule({ opacity = "0.7 0.7 1", match = { class = "^(org\\.jellyfin\\.JellyfinDesktop)$" } })
+hl.window_rule({
+    opacity = "0.95 override 0.90 override 1",
+    match = { class = "Cider" },
+})
+hl.window_rule({
+    opacity = "1 override 0.90 override 1",
+    match = { class = "org.jellyfin.JellyfinDesktop" },
+})
 
 --gaming clients & chats
-hl.window_rule({ opacity = "0.7 0.7 1", match = { class = "^([Ss]team)$" } })
-hl.window_rule({ opacity = "0.7 0.7 1", match = { class = "^(steamwebhelper)$" } })
-hl.window_rule({ opacity = "0.8 0.8", match = { class = "^(vesktop)$" } })
-hl.window_rule({ opacity = "0.8 0.8", match = { class = "^(discord)$" } })
-hl.window_rule({ opacity = "0.8 0.8", match = { class = "^(WebCord)$" } })
-hl.window_rule({ opacity = "0.8 0.8", match = { class = "^(ArmCord)$" } })
+hl.window_rule({ opacity = "0.95 0.9 1", match = { class = "^steam$" } })
+hl.window_rule({ opacity = "0.95 0.7 1", match = { class = "^(steamwebhelper)$" } })
+hl.window_rule({ opacity = "0.9 0.8", match = { class = "^(discord)$" } })
+hl.window_rule({ opacity = "0.9 0.8", match = { class = "^(WebCord)$" } })
+
 
 --file editors and terminals
-hl.window_rule({ opacity = "0.8 0.8 1", match = { class = "^(code-oss)$" } })
-hl.window_rule({ opacity = "0.8 0.8 1", match = { class = "^([Cc]ode)$" } })
-hl.window_rule({ opacity = "0.8 0.8 1", match = { class = "^(code-url-handler)$" } })
-hl.window_rule({ opacity = "0.8 0.8 1", match = { class = "^(code-insiders-url-handler)$" } })
-hl.window_rule({ opacity = "0.8 0.8 1", match = { class = "^(kitty)$" } })
+hl.window_rule({ opacity = ".98 override 0.85 1", match = { class = "^(code-oss)$" } })
+hl.window_rule({ opacity = "0.95 0.85 1", match = { class = "^([Cc]ode)$" } })
+hl.window_rule({ opacity = "0.98 0.85 1", match = { class = "^(code-url-handler)$" } })
+hl.window_rule({ opacity = "0.95 0.85 1", match = { class = "^(code-insiders-url-handler)$" } })
+hl.window_rule({ opacity = "0.98 override 0.8 1", match = { class = "^(kitty)$" } })
 hl.window_rule({ opacity = "0.8 0.8 1", match = { class = "^(ghostty)$" } }) --might switch too..
 hl.window_rule({ opacity = "0.8 0.8 1", match = { class = "^(org.kde.dolphin)$" } })
 hl.window_rule({ opacity = "0.8 0.8 1", match = { class = "^(org.kde.ark)$" } })

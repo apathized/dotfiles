@@ -13,8 +13,10 @@ hl.config({
     input = {
         --keyboard (Keychron C2 Pro)
         kb_layout = "us",
-        kb_model = "pc104", --my keyboard, run cat /usr/share/X11/xkb/rules/evdev.lst too see options! 
+        kb_model = "pc104", --my keyboard, run cat /usr/share/X11/xkb/rules/evdev.lst to see options
         numlock_by_default = true,
+        repeat_rate = 40, --faster kb scroll.
+        repeat_delay = 275, --delay before kb scroll
         --Mouse (GPro Wireless)
         accel_profile = "flat",
         follow_mouse = 1,

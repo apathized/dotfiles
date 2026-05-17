@@ -35,8 +35,7 @@ hl.env("HYPRCURSOR_SIZE", "24")
 --hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
 
 --Others
---HyDE Shell integration (Will be phased out)
+--prepending ~/.local/bin
 hl.env("PATH", os.getenv("HOME") .. "/.local/bin:" .. os.getenv("PATH"))
 --Java Workaround, fixes Jetbrains IDE's
 hl.env("_JAVA_AWT_WM_NONREPARENTING", "1")
-

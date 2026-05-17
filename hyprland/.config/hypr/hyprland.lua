@@ -6,17 +6,13 @@
         /_/                    /____/                /____/_/                                                       /____/   
 ]]--
 
---Was originally based on HyDE, somwhat forking their config after the hyprland lua switch. Highly recommend for new users,
---Its where I started and learned from!
---https://hydeproject.pages.dev/
-
-
 --Include List, in order of load states
 --When in doubt: https://wiki.hypr.land/Configuring/Start/
 
 --Setup / Shared
 require("variables")
 require("env")
+--require("theme") --Theme switcher
 
 -- Hardware / IO
 require("monitors")
@@ -32,4 +28,3 @@ require("misc")
 require("rules")
 require("keybinds")
 require("autostart")
-
