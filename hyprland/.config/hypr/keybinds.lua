@@ -45,7 +45,7 @@ hl.bind(mainmod .."+ CONTROL + Right", hl.dsp.focus({ workspace = "r+1" }), { de
 hl.bind(mainmod .."+ CONTROL + Left", hl.dsp.focus({ workspace = "r-1" }), { description = "Previous workspace"})
 hl.bind(mainmod .."+ CONTROL + Down", hl.dsp.focus({ workspace = "empty" }), { description = "Next empty workspace"})
 hl.bind(mainmod .."+ CONTROL + Up", hl.dsp.focus({ workspace = "previous" }), { description = "Last active workspace"})
-
+hl.bind(mainmod .."+ T", hl.dsp.layout("togglesplit"), { description = "Toggle split direction"})
 -- mouse resizing
 hl.bind(mainmod .."+ mouse:272", hl.dsp.window.drag(),{ drag = true, description = "hold to move window"})
 hl.bind(mainmod .."+ mouse:273", hl.dsp.window.resize(),{ drag = true, description = "hold to resize window"})
