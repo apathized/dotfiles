@@ -76,9 +76,7 @@ hl.bind(mainmod .. " + C", hl.dsp.exec_cmd(editor), { description = "Code editor
 hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd("hyde-shell system.monitor"), {description = "System Monitor"})
 
 --straight one for one translated from the HyDE file. will replace all of these eventually with my own.
-hl.bind(mainmod .. " + SPACE",     hl.dsp.exec_cmd("pkill -x rofi || hyde-shell rofilaunch d"),     { description = "Application finder" })
-hl.bind(mainmod .. " + TAB",       hl.dsp.exec_cmd("pkill -x rofi || hyde-shell rofilaunch w"),     { description = "Window switcher" })
-hl.bind(mainmod .. " + SHIFT + E", hl.dsp.exec_cmd("pkill -x rofi || hyde-shell rofilaunch f"),     { description = "File finder" })
+hl.bind(mainmod .."+ SPACE", hl.dsp.exec_cmd("pkill -x rofi || rofi -show drun"), {description = "Rofi Application Finder"})
 hl.bind(mainmod .. " + slash",     hl.dsp.exec_cmd("pkill -x rofi || hyde-shell keybinds_hint c"),  { description = "Keybinds hint" })
 hl.bind(mainmod .. " + comma",     hl.dsp.exec_cmd("pkill -x rofi || hyde-shell emoji-picker"),     { description = "Emoji picker" })
 hl.bind(mainmod .. " + period",    hl.dsp.exec_cmd("pkill -x rofi || hyde-shell glyph-picker"),     { description = "Glyph picker" })
@@ -96,10 +94,10 @@ hl.bind("F8", hl.dsp.exec_cmd("playerctl play-pause"), {description = "Play and 
 hl.bind("F7", hl.dsp.exec_cmd("playerctl previous"), {description = "Previous A/V (Keychron Specific)", locked = true })
 hl.bind("F9", hl.dsp.exec_cmd("playerctl next"), {description = "Next A/V (Keychron Specific)", locked = true })
 
---brightness keys incld. redundancy keys
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("hyde-shell brightnesscontrol i"), { description = "Increase brightness", locked = true, repeating = true})
+--brightness keys incld. redundancy keys (Not working atm. Not a priority.)
+--hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("hyde-shell brightnesscontrol i"), { description = "Increase brightness", locked = true, repeating = true})
 --hl.bind(", F6", hl.dsp.exec_cmd("hyde-shell brightnesscontrol i"), { description = "Increase brightness", locked = true, repeating = true})
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("hyde-shell brightnesscontrol d"), { description = "Decrease brightness", locked = true, repeating = true})
+--hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("hyde-shell brightnesscontrol d"), { description = "Decrease brightness", locked = true, repeating = true})
 --hl.bind(", F5", hl.dsp.exec_cmd("hyde-shell brightnesscontrol d"), { description = "Decrease brightness", locked = true, repeating = true})
 
 --screen grabber and color picker.

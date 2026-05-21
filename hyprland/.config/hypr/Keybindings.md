@@ -1,6 +1,6 @@
 # Keybindings
 ### Quick cheatsheet on all of my Keybindings. This list is subject to change!
-### Created by: Ryan M, This file was produced on the fly by Claude.
+### Created by: Ryan M, This file was produced on the fly by Claude. Going to change it once list is finalized to look better.
 
 > `$mainmod` = Super key
 
@@ -102,8 +102,6 @@ Hold to repeat.
 | Keybind             | Action               |
 | ---------------------| ----------------------|
 | `Super + Space`     | Application finder   |
-| `Super + Tab`       | Window switcher      |
-| `Super + Shift + E` | File finder          |
 | `Super + /`         | Keybinds hint        |
 | `Super + ,`         | Emoji picker         |
 | `Super + .`         | Glyph picker         |
