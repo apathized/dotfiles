@@ -50,13 +50,13 @@ hl.window_rule({ opacity = "0.9 0.8", match = { class = "^(WebCord)$" } })
 
 
 --file editors and terminals
-hl.window_rule({ opacity = ".98 override 0.85 1", match = { class = "^(code-oss)$" } })
-hl.window_rule({ opacity = "0.95 0.85 1", match = { class = "^([Cc]ode)$" } })
+hl.window_rule({ opacity = ".95 override 0.85 1", match = { class = "^(code-oss)$" } })
+hl.window_rule({ opacity = "0.95 override 0.85 1", match = { class = "^([Cc]ode)$" } })
 hl.window_rule({ opacity = "0.98 0.85 1", match = { class = "^(code-url-handler)$" } })
 hl.window_rule({ opacity = "0.95 0.85 1", match = { class = "^(code-insiders-url-handler)$" } })
-hl.window_rule({ opacity = "0.98 override 0.8 1", match = { class = "^(kitty)$" } })
-hl.window_rule({ opacity = "0.8 0.8 1", match = { class = "^(ghostty)$" } }) --might switch too..
-hl.window_rule({ opacity = "0.8 0.8 1", match = { class = "^(org.kde.dolphin)$" } })
+hl.window_rule({ opacity = "0.9 override 0.8 1", match = { class = "^(kitty)$" } })
+hl.window_rule({ opacity = "0.9 override 0.8 1", match = { class = "^(ghostty)$" } }) --might switch to..
+hl.window_rule({ opacity = "0.9 override 0.85 1", match = { class = "^(org.kde.dolphin)$" } })
 hl.window_rule({ opacity = "0.8 0.8 1", match = { class = "^(org.kde.ark)$" } })
 
 --qt and various settings / sys panels.
