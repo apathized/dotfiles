@@ -1,0 +1,24 @@
+/*
+    Apathy's Rofi Config.
+    Palette switcher via theme.rasi
+    Pallete's are imported from rofi/themes
+*/
+@theme "~/.config/rofi/theme.rasi"
+
+configuration {
+    modi: "drun,window,filebrowser,run";
+    show-icons: true;
+    drun-display-format: "{name} [<span size='small'><i>({generic})</i></span>]";
+    display-drun: "apps";
+    matching: "fuzzy";
+    sort: true;
+    sorting-method: "fzf";
+    case-sensitive: false;
+    
+    location: 0;
+    kb-element-next: "";
+    kb-element-prev: "";
+    kb-mode-next: "Tab";
+    kb-mode-previous: "ISO_Left_Tab";   /* this is Shift+Tab */
+    kb-row-tab: ""; 
+}

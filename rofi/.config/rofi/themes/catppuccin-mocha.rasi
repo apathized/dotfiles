@@ -1,0 +1,127 @@
+/*
+    Catppuccin Mocha Pallete:
+    https://catppuccin.com/palette
+ */
+
+*{
+    // Base Surface
+    base:     #1e1e2e;
+    mantle:   #181825;
+    crust:    #11111b;
+    surface0: #313244;
+    surface1: #45475a;
+    surface2: #585b70;
+
+    // Various Texts
+    text:     #cdd6f4; //main-text
+    subtext1: #bac2de;
+    subtext0: #a6adc8;
+    overlay2: #9399b2;
+    overlay1: #7f849c;
+    overlay0: #6c7086;
+
+    // Accents
+    rosewater: #f5e0dc;
+    flamingo:  #f2cdcd;
+    pink:      #f5c2e7;
+    mauve:     #cba6f7;
+    red:       #f38ba8;
+    maroon:    #eba0ac;
+    peach:     #fab387;
+    yellow:    #f9e2af;
+    green:     #a6e3a1;
+    teal:      #94e2d5;
+    sky:       #89dceb;
+    sapphire:  #74c7ec;
+    blue:      #89b4fa;
+    lavender:  #b4befe;
+}
+
+window{ //default settings
+    location: center;
+    anchor: center;
+    width: 600px; //fits 1440p montior, can be 600-400px
+    border-radius: 0;
+    background-color: @base;
+}
+
+mainbox{ //rofi container, houses all widgets.
+    enabled: true;
+    spacing: 0px;
+    padding: 12px; //make sure to fiddle with.
+    background-color: transparent;
+
+    //widgets:
+    children: [
+        "inputbar",
+        "listview"
+    ];
+}
+
+inputbar{
+    enabled: true;
+    spacing: 8px;
+    padding: 8px 12px;
+    background-color: @surface0;
+    text-color: @text;
+    
+    children: [
+        "prompt",
+        "entry"
+    ];
+}
+
+listview{
+    enabled: true;
+    columns: 1;
+    lines: 8;
+    cycle: false;
+    scrollbar: false;
+    dynamic: true;
+    spacing: 2px;
+    padding: 8px 0px 0px 0px;
+    background-color: transparent;
+    text-color: @text;
+}
+
+prompt{
+    enabled: true;
+    background-color: inherit;
+    text-color: @mauve; //play with this!
+}
+
+entry{
+    enabled: true;
+    background-color: inherit;
+    text-color: inherit;
+    placeholder: "type...";
+    placeholder-color: @overlay0; //play with this
+}
+
+
+element{
+    enabled: true;
+    spacing: 8px;
+    padding: 6px 8px;
+    background-color: transparent;
+    text-color: @text;
+}
+
+element selected{
+    background-color: @mauve; //fiddle with
+    text-color: @base; // this too!
+}
+
+element-icon{
+    background-color: transparent;
+    text-color: inherit;
+    size: 20px;
+}
+
+element-text{
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}
