@@ -63,13 +63,17 @@ If you are the original creator of any included images and would like any attrib
 
 ### Wallpapers
 
-**Catppuccin Mocha** wallpapers sourced from the Catppuccin community collection
+**Catppuccin Mocha** wallpapers were sourced from the wonderful Catppuccin community collection:
 - https://github.com/zhichaoh/catppuccin-wallpapers
 - Upstream: https://github.com/catppuccin/wallpapers
-- License: MIT © 2021-present Catppuccin Org
+- License: MIT © 2021-present Catppuccin Org.
 
-**Gruvbox Dark / Light** wallpapers sourced from the collection curated by AngelJumbo
+**Gruvbox Dark / Light** wallpapers were sourced from the amazing collection curated by AngelJumbo:
 - https://github.com/AngelJumbo/gruvbox-wallpapers
-- No license specified; community-contributed images with often-unknown original sources
+- No license specified; community-contributed images with often-unknown original sources.
+
+**GB Coastal Greens** wallpapers were partially sourced from this giant collection curated by dharmx:
+- https://github.com/dharmx/walls
+- No license specified; many of the wallpapers used come from community-contributed resources such as reddit or wallhaven.
 
 **Yatai**, **GB Coastal Greens**, **Tokyo Night** wallpapers sourced individually; original artists credited where known.
