@@ -21,6 +21,8 @@ configuration {
     show-icons: true;
     drun-display-format: "{name} [<span size='small'><i>({generic})</i></span>]";
     display-drun: "apps";
+    display-filebrowser: "file";
+    display-window: "windows";
     matching: "fuzzy";
     sort: true;
     sorting-method: "fzf";

@@ -56,9 +56,6 @@ If you are the original creator of any included images and would like any attrib
 - https://github.com/catppuccin/catppuccin
 - License: MIT © 2021-present Catppuccin Org
 
-**Tokyo Night** by enkia
-- https://github.com/enkia/tokyo-night-vscode-theme
-
 **Yatai** and **GB Coastal Greens** are custom palettes designed for this repository, derived from pixel-art wallpapers.
 
 ### Wallpapers
@@ -76,4 +73,4 @@ If you are the original creator of any included images and would like any attrib
 - https://github.com/dharmx/walls
 - No license specified; many of the wallpapers used come from community-contributed resources such as reddit or wallhaven.
 
-**Yatai**, **GB Coastal Greens**, **Tokyo Night** wallpapers sourced individually; original artists credited where known.
+**Yatai**, **GB Coastal Greens** wallpapers sourced individually; original artists credited where known.

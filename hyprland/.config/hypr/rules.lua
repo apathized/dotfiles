@@ -43,10 +43,16 @@ hl.window_rule({
 })
 
 --gaming clients & chats
-hl.window_rule({ opacity = "0.95 0.9 1", match = { class = "^steam$" } })
+hl.window_rule({ opacity = "0.95 0.9 1", float = false, match = { class = "^(steam)$" } })
+hl.window_rule({ opacity = "0.95 0.9 1", float = true,  match = { title = "^(Friends List)$" } })
+hl.window_rule({ opacity = "0.95 0.9 1", float = true,  match = { title = "^(Steam Settings)$" } })
 hl.window_rule({ opacity = "0.95 0.7 1", match = { class = "^(steamwebhelper)$" } })
 hl.window_rule({ opacity = "0.9 0.8", match = { class = "^(discord)$" } })
 hl.window_rule({ opacity = "0.9 0.8", match = { class = "^(WebCord)$" } })
+
+--steam context menu fix (menus spawn as empty-title windows; keep focused + don't force-resize)
+hl.window_rule({ stay_focused = true, match = { class = "^(steam)$", title = "^()$" } })
+hl.window_rule({ min_size = { 1, 1 }, match = { class = "^(steam)$", title = "^()$" } })
 
 
 --file editors and terminals

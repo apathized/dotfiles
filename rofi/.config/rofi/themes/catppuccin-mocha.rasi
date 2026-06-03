@@ -1,9 +1,12 @@
 /*
-    Catppuccin Mocha Pallete:
+    Catppuccin Mocha — v2
+    Floating search pill overlaid on header image.
     https://catppuccin.com/palette
- */
+*/
 
 *{
+    font: "FiraCode Nerd Font Light 11";
+
     // Base Surface
     base:     #1e1e2e;
     mantle:   #181825;
@@ -13,7 +16,7 @@
     surface2: #585b70;
 
     // Various Texts
-    text:     #cdd6f4; //main-text
+    text:     #cdd6f4;
     subtext1: #bac2de;
     subtext0: #a6adc8;
     overlay2: #9399b2;
@@ -37,67 +40,92 @@
     lavender:  #b4befe;
 }
 
-window{ //default settings
+window{
+    transparency: "real";
     location: center;
     anchor: center;
-    width: 600px; //fits 1440p montior, can be 600-400px
-    border-radius: 0;
-    background-color: @base;
-}
-
-mainbox{ //rofi container, houses all widgets.
-    enabled: true;
-    spacing: 0px;
-    padding: 12px; //make sure to fiddle with.
+    width: 800px;
+    border-radius: 12px;
+    border: 0px;
     background-color: transparent;
-
-    //widgets:
-    children: [
-        "inputbar",
-        "listview"
-    ];
 }
 
-inputbar{
+mainbox{
+    spacing: 0px;
+    padding: 0px;
+    background-color: transparent;
+    children: ["header", "inputbar", "listview"];
+}
+
+header{
     enabled: true;
+    height: 80px;
+    background-color: @mauve;
+    expand: false;
+}
+
+// Floating pill on top of header image
+inputbar{
     spacing: 8px;
-    padding: 8px 12px;
-    background-color: @surface0;
+    padding: 8px 14px;
+    margin: 0px 16px 10px 16px; // inset from window edges, gap below before list
+    background-color: #11111bdd;  // @crust @ ~87% opacity
+    border-radius: 20px;
+    border: 0px;
     text-color: @text;
-    
-    children: [
-        "prompt",
-        "entry"
-    ];
+    children: ["prompt", "entry", "mode-switcher"];
+}
+
+mode-switcher{
+    enabled: true;
+    expand: false;
+    spacing: 6px;
+    background-color: transparent;
+    vertical-align: 0.5;
+}
+
+button{
+    padding: 4px 14px;
+    border-radius: 14px;
+    background-color: #313244aa;  // @surface0 @ ~67% opacity
+    text-color: @overlay1;
+    cursor: pointer;
+    vertical-align: 0.5;
+}
+
+button selected{
+    background-color: @maroon;
+    text-color: @base;
 }
 
 listview{
     enabled: true;
     columns: 1;
-    lines: 8;
+    lines: 7;
     cycle: false;
     scrollbar: false;
     dynamic: true;
     spacing: 2px;
-    padding: 8px 0px 0px 0px;
-    background-color: transparent;
+    padding: 12px 8px 8px 8px;
+    background-color: #1e1e2ecc;
     text-color: @text;
 }
 
 prompt{
     enabled: true;
-    background-color: inherit;
-    text-color: @mauve; //play with this!
+    background-color: transparent;
+    text-color: @maroon;
+    vertical-align: 0.5;
 }
 
 entry{
     enabled: true;
-    background-color: inherit;
-    text-color: inherit;
+    background-color: transparent;
+    text-color: @text;
     placeholder: "type...";
-    placeholder-color: @overlay0; //play with this
+    placeholder-color: @overlay0;
+    vertical-align: 0.5;
 }
-
 
 element{
     enabled: true;
@@ -105,11 +133,12 @@ element{
     padding: 6px 8px;
     background-color: transparent;
     text-color: @text;
+    border-radius: 6px;
 }
 
 element selected{
-    background-color: @mauve; //fiddle with
-    text-color: @base; // this too!
+    background-color: @maroon;
+    text-color: @base;
 }
 
 element-icon{
