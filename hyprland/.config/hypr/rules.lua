@@ -51,8 +51,8 @@ hl.window_rule({ opacity = "0.9 0.8", match = { class = "^(discord)$" } })
 hl.window_rule({ opacity = "0.9 0.8", match = { class = "^(WebCord)$" } })
 
 --steam context menu fix (menus spawn as empty-title windows; keep focused + don't force-resize)
-hl.window_rule({ stay_focused = true, match = { class = "^(steam)$", title = "^()$" } })
-hl.window_rule({ min_size = { 1, 1 }, match = { class = "^(steam)$", title = "^()$" } })
+--hl.window_rule({ stay_focused = true, match = { class = "^(steam)$", title = "^()$" } })
+--hl.window_rule({ min_size = { 1, 1 }, match = { class = "^(steam)$", title = "^()$" } })
 
 
 --file editors and terminals
