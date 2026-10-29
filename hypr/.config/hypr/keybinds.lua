@@ -1,0 +1,120 @@
+--[[         
+▐▓▌ ▐▓▌▐▓▓▓▓▌▐▓▌ ▐▓▌▐▓▓▓▓▌ ▐▓▓▓▓▓▌▐▓▌ ▐▓▌▐▓▓▓▓▌ ▐▓▓▓▓▌   ▐▓▌   ▐▓▌▐▓▌▐▓▓▓▓▌
+▐▓▌▐▓▌ ▐▓▌    ▐▓▐▓▌ ▐▓▌ ▐▓▌  ▐▓▌  ▐▓▓▌▐▓▌▐▓▌ ▐▓▌▐▓▌      ▐▓▌   ▐▓▌▐▓▌▐▓▌▐▓▌
+▐▓▐▓▌  ▐▓▓▓▌   ▐▓▌  ▐▓▓▓▓▓▌  ▐▓▌  ▐▓▐▓▐▓▌▐▓▌ ▐▓▌▐▓▓▓▓▌   ▐▓▌   ▐▓▌▐▓▌▐▓▓▓▓▌
+▐▓▌▐▓▌ ▐▓▌     ▐▓▌  ▐▓▌ ▐▓▌  ▐▓▌  ▐▓▌▐▓▓▌▐▓▌ ▐▓▌   ▐▓▌   ▐▓▌   ▐▓▌▐▓▌▐▓▌▐▓▌
+▐▓▌ ▐▓▌▐▓▓▓▓▌  ▐▓▌  ▐▓▓▓▓▌ ▐▓▓▓▓▓▌▐▓▌ ▐▓▌▐▓▓▓▓▌ ▐▓▓▓▓▌▐▓▌▐▓▓▓▓▌▐▓▓▓▓▌▐▓▌▐▓▌
+Created by Ryan M
+
+Notes:
+	--Keybindings, make sure to update variables.lua for these to work correctly.
+	--https://wiki.hypr.land/Configuring/Basics/Binds/
+	--https://wiki.hypr.land/Configuring/Basics/Dispatchers/
+
+	Given that these were originally from my HyDE install, there is some leftovers. Todo: clear out the left overs!
+]]--
+
+hl.bind(mainmod .."+ W", hl.dsp.window.close(), {description = "Close focused window"})
+hl.bind("ALT + F4", hl.dsp.window.close(), {description = "Close focused window"})
+hl.bind(mainmod .."+ Delete", hl.dsp.exec_cmd("uwsm stop"), {description = "Log out (no launcher yet)"})
+hl.bind(mainmod .."+ Q", hl.dsp.window.float({action = "toggle"}), {description = "Toggle window float"})
+hl.bind("SHIFT + F11", hl.dsp.window.fullscreen({mode = "fullscreen", action = "toggle"}), {description = "Toggle focused fullscreen"})
+hl.bind(mainmod .."+ SHIFT + L", hl.dsp.exec_cmd("hyprlock"), {description = "Lock user session"})
+hl.bind(mainmod .."+ Control_R", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"), {description = "Toggle Waybar"})
+--HYDE: hl.bind(mainmod .."+ L", hl.dsp.exec_cmd("hyde-shell window.pin"), {description = "Pin active window to screen"}) -- TODO: native pin, check wiki Dispatchers for the Lua name
+
+
+--focus movement
+hl.bind(mainmod .."+ Left", hl.dsp.focus({ direction = "l" }), {description = "Focus Left"})
+hl.bind(mainmod .."+ Right", hl.dsp.focus({ direction = "r" }), {description = "Focus Right"})
+hl.bind(mainmod .."+ Up", hl.dsp.focus({ direction = "u" }), {description = "Focus Upwards"})
+hl.bind(mainmod .."+ Down", hl.dsp.focus({ direction = "d" }), {description = "Focus Downwards"})
+
+--window movements across workspace
+hl.bind(mainmod .."+ SHIFT + Left", hl.dsp.window.move({ direction = "l" }), {description = "Move Window to Left"})
+hl.bind(mainmod .."+ SHIFT + Right", hl.dsp.window.move({ direction = "r" }), {description = "Move Window to Right"})
+hl.bind(mainmod .."+ SHIFT + Up", hl.dsp.window.move({ direction = "u" }), {description = "Move Window Upwards"})
+hl.bind(mainmod .."+ SHIFT + Down", hl.dsp.window.move({ direction = "d" }), {description = "Move Window Downwards"})
+
+-- resize active window (hold to repeat)
+hl.bind(mainmod .."+ CONTROL + SHIFT + Right", hl.dsp.window.resize({ x = 30,  y = 0,   relative = true }), { description = "Resize window right", repeating = true})
+hl.bind(mainmod .."+ CONTROL + SHIFT + Left", hl.dsp.window.resize({ x = -30, y = 0,   relative = true }), { description = "Resize window left", repeating = true})
+hl.bind(mainmod .."+ CONTROL + SHIFT + Up", hl.dsp.window.resize({ x = 0,   y = -30, relative = true }), { description = "Resize window up", repeating = true})
+hl.bind(mainmod .."+ CONTROL + SHIFT + Down", hl.dsp.window.resize({ x = 0,   y = 30,  relative = true }), { description = "Resize window down", repeating = true})
+
+--workspace swaps
+hl.bind(mainmod .."+ CONTROL + Right", hl.dsp.focus({ workspace = "r+1" }), { description = "Next workspace"})
+hl.bind(mainmod .."+ CONTROL + Left", hl.dsp.focus({ workspace = "r-1" }), { description = "Previous workspace"})
+hl.bind(mainmod .."+ CONTROL + Down", hl.dsp.focus({ workspace = "empty" }), { description = "Next empty workspace"})
+hl.bind(mainmod .."+ CONTROL + Up", hl.dsp.focus({ workspace = "previous" }), { description = "Last active workspace"})
+hl.bind(mainmod .."+ T", hl.dsp.layout("togglesplit"), { description = "Toggle split direction"})
+-- mouse resizing
+hl.bind(mainmod .."+ mouse:272", hl.dsp.window.drag(), { mouse = true, description = "hold to move window"})
+hl.bind(mainmod .."+ mouse:273", hl.dsp.window.resize(), { mouse = true, description = "hold to resize window"})
+hl.bind(mainmod .."+ Z", hl.dsp.window.drag(), { mouse = true, description = "hold to move window"})
+hl.bind(mainmod .."+ X", hl.dsp.window.resize(), { mouse = true, description = "hold to resize window"})
+
+-- mouse swaps
+hl.bind(mainmod .."+ mouse_down", hl.dsp.focus({ workspace = "e+1" }), { description = "Next workspace" })
+hl.bind(mainmod .."+ mouse_up", hl.dsp.focus({ workspace = "e-1" }), { description = "Previous workspace" })
+
+
+for i = 1, 10 do
+    local key = tostring(i % 10)
+    -- focus workspace
+    hl.bind(mainmod .. " + " .. key, hl.dsp.focus({ workspace = i }), { description = "Workspace " .. i })
+    --move active window to workspace (and follow)
+    hl.bind(mainmod .."+ SHIFT + " .. key, hl.dsp.window.move({workspace = i}), {description = "Move to workspace " .. i})
+    --move active window to workspace silently (don't follow)
+    hl.bind(mainmod .."+ ALT + " .. key, hl.dsp.window.move({workspace = i, follow = false}), {description = "Move to workspace " .. i .. " and do not follow."})
+end
+
+
+--apps and rofi
+hl.bind(mainmod .."+ RETURN", hl.dsp.exec_cmd(terminal), {description = "Terminal"})
+hl.bind(mainmod .."+ F", hl.dsp.exec_cmd(fileManager), {description = "File Browser"})
+hl.bind(mainmod .."+ B", hl.dsp.exec_cmd(browser), {description = "Web Browser"})
+hl.bind(mainmod .. " + C", hl.dsp.exec_cmd(editor), { description = "Code editor" })
+hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd("pkill -x btop || " .. sysMonitor), {description = "System Monitor"})
+
+--straight one for one translated from the HyDE file. todo: un-hydeify this.
+hl.bind(mainmod .."+ SPACE", hl.dsp.exec_cmd("pkill -x rofi || " .. menu), {description = "Rofi Application Finder"})
+--HYDE: hl.bind(mainmod .. " + slash",     hl.dsp.exec_cmd("pkill -x rofi || hyde-shell keybinds_hint c"),  { description = "Keybinds hint" })
+--HYDE: hl.bind(mainmod .. " + comma",     hl.dsp.exec_cmd("pkill -x rofi || hyde-shell emoji-picker"),     { description = "Emoji picker" })
+--HYDE: hl.bind(mainmod .. " + period",    hl.dsp.exec_cmd("pkill -x rofi || hyde-shell glyph-picker"),     { description = "Glyph picker" })
+--HYDE: hl.bind(mainmod .. " + V",         hl.dsp.exec_cmd("pkill -x rofi || hyde-shell cliphist -c"),      { description = "Clipboard" })
+--HYDE: hl.bind(mainmod .. " + SHIFT + V", hl.dsp.exec_cmd("pkill -x rofi || hyde-shell cliphist"),         { description = "Clipboard manager" })
+--HYDE: hl.bind(mainmod .. " + SHIFT + A", hl.dsp.exec_cmd("pkill -x rofi || hyde-shell rofiselect"),       { description = "Rofi launcher select" })
+
+--audio keybinds
+hl.bind("F10", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), {description = "F10 Toggle Audio Mute (Keychron Specific)", locked =true})
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), {description = "Mute Volume (Universal)"})
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), {description = "Volume Up (Universal)", locked = true, repeating = true})
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), {description = "Volume Down (Universal)", locked = true, repeating = true})
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), {description = "Mute Audio (Universal)", locked = true})
+
+
+--media playback. (Hint: some commands are bound to fit my keyboard, look for keychron specific descriptions)
+hl.bind("F8", hl.dsp.exec_cmd("playerctl play-pause"), {description = "Play and Pause A/V (Keychron Specific)", locked = true})
+hl.bind("F7", hl.dsp.exec_cmd("playerctl previous"), {description = "Previous A/V (Keychron Specific)", locked = true })
+hl.bind("F9", hl.dsp.exec_cmd("playerctl next"), {description = "Next A/V (Keychron Specific)", locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), {description = "Play and Pause A/V (Universal)", locked = true})
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), {description = "Play and Pause A/V (Universal)", locked = true})
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), {description = "Previous A/V (Universal)", locked = true})
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), {description = "Next A/V (Universal)", locked = true})
+
+--brightness keys incld. redundancy keys (Not working atm. Not a priority.)
+--hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("hyde-shell brightnesscontrol i"), { description = "Increase brightness", locked = true, repeating = true})
+--hl.bind(", F6", hl.dsp.exec_cmd("hyde-shell brightnesscontrol i"), { description = "Increase brightness", locked = true, repeating = true})
+--hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("hyde-shell brightnesscontrol d"), { description = "Decrease brightness", locked = true, repeating = true})
+--hl.bind(", F5", hl.dsp.exec_cmd("hyde-shell brightnesscontrol d"), { description = "Decrease brightness", locked = true, repeating = true})
+
+--screen grabber and color picker.
+hl.bind(mainmod .."+ SHIFT + P", hl.dsp.exec_cmd("hyprpicker -an"), { description = "Color picker"})
+hl.bind(mainmod .."+ P", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | wl-copy"), { description = "Snip screen"})
+hl.bind(mainmod .."+ CONTROL + P", hl.dsp.exec_cmd("grim -g \"$(slurp -f)\" - | wl-copy"), { description = "Freeze and snip"})
+
+
+--wallpaper pickers (todo: make this work without hyde.)
+--HYDE: hl.bind(mainmod .."+ ALT + Right", hl.dsp.exec_cmd("hyde-shell wallpaper -Gn"), { description = "Next wallpaper"})
+--HYDE: hl.bind(mainmod .."+ ALT + Left", hl.dsp.exec_cmd("hyde-shell wallpaper -Gp"), { description = "Previous wallpaper"})

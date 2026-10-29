@@ -9,6 +9,7 @@ Created by Ryan M
 Notes:
 	This controls Keyboard/Mouse Profiles, rather then Keybindings. (Most of these are defaults.)
 	If you are on Logitech gear, I highly suggest using https://github.com/pwr-Solaar/Solaar for configuration!
+	
 ]]--
 
 hl.config({
