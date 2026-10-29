@@ -88,7 +88,7 @@ hl.bind(mainmod .."+ SPACE", hl.dsp.exec_cmd("pkill -x rofi || " .. menu), {desc
 
 --audio keybinds
 hl.bind("F10", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), {description = "F10 Toggle Audio Mute (Keychron Specific)", locked =true})
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), {description = "Mute Volume (Universal)"})
+   hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), {description = "Mute Microphone (Universal)", locked = true})
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), {description = "Volume Up (Universal)", locked = true, repeating = true})
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), {description = "Volume Down (Universal)", locked = true, repeating = true})
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), {description = "Mute Audio (Universal)", locked = true})
