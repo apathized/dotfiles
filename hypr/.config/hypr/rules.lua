@@ -108,3 +108,18 @@ hl.config({
 --     match = { class = "mpv|brave-browser|zen|[Cc]ider" },
 --     idle_inhibit = "fullscreen",
 -- })
+
+---- floating popups from waybar ----
+hl.window_rule({
+    name   = "float-wiremix",
+    match  = { class = "^wiremix$" },
+    float  = true,
+    center = true,
+})
+
+hl.window_rule({
+    name   = "float-nmtui",
+    match  = { class = "^nmtui$" },
+    float  = true,
+    center = true,
+})

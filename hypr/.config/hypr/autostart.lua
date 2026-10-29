@@ -21,4 +21,7 @@ hl.on("hyprland.start", function()
     -- Wallpaper daemon
     hl.exec_cmd("uwsm app -- awww-daemon")
     hl.exec_cmd("sleep 1; waypaper --restore")
+    
+    -- USB automount; tray icon only shows while a drive is plugged in
+    hl.exec_cmd("uwsm app -- udiskie --appindicator --smart-tray")
 end)
