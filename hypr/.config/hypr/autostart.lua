@@ -17,4 +17,8 @@ hl.on("hyprland.start", function()
 
     -- Clipboard history
     hl.exec_cmd("uwsm app -- wl-paste --watch cliphist store")
+
+    -- Wallpaper daemon
+    hl.exec_cmd("uwsm app -- awww-daemon")
+    hl.exec_cmd("sleep 1; waypaper --restore")
 end)
