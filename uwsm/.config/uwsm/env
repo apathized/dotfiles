@@ -1,0 +1,8 @@
+export QT_QPA_PLATFORMTHEME=qt6ct
+export EDITOR=micro
+export VISUAL=micro
+export GTK_THEME=Adwaita:dark
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+export QT_QPA_PLATFORM="wayland;xcb"
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export PATH="$HOME/.local/bin:$PATH"
