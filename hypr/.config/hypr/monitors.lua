@@ -34,7 +34,6 @@ hl.monitor({
     vrr                 = 2,
     cm                  = "auto",
     bitdepth            = 10,
-    supports_hdr        = 1,
     supports_wide_color = 1, --can cause oversaturation on monitors that dont actually support it.
 })
 
@@ -45,3 +44,6 @@ hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" 
 -- Everything else is created on whichever monitor is focused.
 hl.workspace_rule({ workspace = "1", monitor = "DP-1", default = true })
 hl.workspace_rule({ workspace = "2", monitor = "DP-3", default = true })
+
+-- no automatic HDR switching on fullscreen (OLED blanks ~2s on every HDR mode change)
+hl.config({ render = { cm_auto_hdr = 0 } })
