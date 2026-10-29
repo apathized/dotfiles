@@ -50,3 +50,12 @@ window#waybar {
 #wireplumber.muted          { color: #888888; }
 #custom-notifications.dnd   { color: #888888; }
 #custom-power               { color: #e5512e; }
+
+/* blank workspace: collapse the empty title slot and drop the divider before the clock */
+window#waybar.empty #window {
+    padding: 0;
+    margin: 0;
+}
+window#waybar.empty #clock {
+    border-left: none;
+}
