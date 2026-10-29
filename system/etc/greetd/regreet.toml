@@ -14,5 +14,5 @@ reboot = [ "systemctl", "reboot" ]
 poweroff = [ "systemctl", "poweroff" ]
 
 [background]
-path = "/etc/greetd/background.png"
+path = "/etc/greetd/background.jpg"
 fit = "Cover"
