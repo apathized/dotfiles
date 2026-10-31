@@ -1,6 +1,7 @@
 # Personal Dotfiles
 
 Originally based on HyDE with my own keybindings and config adjustments. Heavily recommend for starting on Hyprland!
+This variant of the Dot Files is no longer being updated by me. See the *main* branch.
 
 https://hydeproject.pages.dev/
 
