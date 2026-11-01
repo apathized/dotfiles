@@ -16,10 +16,10 @@ window#waybar {
 .modules-right {
     background: rgba(20, 22, 28, 0.85);
     border-radius: 14px;
-    padding: 2px 10px;
+    padding: 2px 4px;          /* top/bottom  left/right */
 }
 
-#cpu, #memory, #workspaces, #window, #clock, #tray,
+#cpu, #memory, #workspaces, #window, #clock, #custom-waypaper, #tray,
 #wireplumber, #mpris, #network, #custom-notifications, #custom-power {
     padding: 0 10px;
     color: #e6e6e6;
@@ -27,7 +27,7 @@ window#waybar {
 
 /* dividers between items inside each pill */
 #memory, #workspaces,
-#clock,
+#clock, #custom-waypaper,
 #wireplumber, #mpris, #network, #custom-notifications, #custom-power {
     border-left: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -59,3 +59,6 @@ window#waybar.empty #window {
 window#waybar.empty #clock {
     border-left: none;
 }
+
+#workspaces        { padding: 0 4px; }
+#workspaces button { min-width: 0; }
