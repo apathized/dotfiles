@@ -11,6 +11,9 @@ Notes:
 	Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 ]]--
 
+
+local c = dofile("/home/ryanm/.config/themes/current/colors.lua") --Theme System, see docs
+
 ---- general ----
 hl.config({
     general = {
@@ -20,8 +23,8 @@ hl.config({
         border_size = 2,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = { colors = { "rgba(" .. c.accent .. "ee)", "rgba(" .. c.accent2 .. "ee)" }, angle = 45 },
+            inactive_border = "rgba(" .. c.bg2 .. "aa)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
