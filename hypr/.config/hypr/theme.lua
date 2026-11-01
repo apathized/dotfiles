@@ -7,7 +7,7 @@
 Created by Ryan M
 
 Notes:
-	Subject to change whenever i get bored. Originally was HyDE based, but at this point it is a amalgamation of what i like.	
+	Subject to change whenever i get bored. Originally was HyDE based, but at this point it is a amalgamation of what i like.
 	Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 ]]--
 
@@ -40,21 +40,29 @@ hl.config({
         rounding       = 10,
         rounding_power = 2,
 
-        -- Change transparency of focused and unfocused windows
+        -- Window-level transparency stays off: it fades text too.
+        -- Transparency lives in the apps themselves (kitty background_opacity).
         active_opacity   = 1.0,
         inactive_opacity = 1.0,
 
+        -- dim unfocused windows. 0 = none, 1 = black. try 0.1 - 0.25
+        dim_inactive = true,
+        dim_strength = 0.15,
+
         shadow = {
-            enabled      = true,
-            range        = 4,
-            render_power = 3,
-            color        = 0xee1a1a1a,
+            enabled        = true,
+            range          = 14,          -- spread
+            render_power   = 3,           -- falloff: 1 = softest, 4 = sharpest
+            offset         = "2 5",       -- 2px right, 5px down
+            color          = 0x66000000,  -- focused: soft black (dark in every theme, so not from the palette)
+            color_inactive = 0x33000000,  -- unfocused: fainter, so the focused window pops
         },
 
+        -- blur only shows behind things with transparency (kitty, waybar pills)
         blur = {
             enabled   = true,
-            size      = 3,
-            passes    = 1,
+            size      = 5,       -- radius
+            passes    = 2,       -- more = smoother, frostier
             vibrancy  = 0.1696,
         },
     },
@@ -62,36 +70,67 @@ hl.config({
     animations = {
         enabled = true,
     },
+
+    misc = {
+        background_color = tonumber("ff" .. c.bg_hard, 16), -- shown before the wallpaper loads (no gray flash)
+        font_family      = "JetBrainsMono Nerd Font",       -- Hyprland's own text: error bar, notices
+    },
 })
 
----- animations (LimeFrenzy, carried from old config) ----
+---- animations: bouncy + floaty ----
 --https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
+--speed = duration in 100ms steps (5 = 0.5s). bigger = slower, floatier.
 
---curve definitions, experiment with wind vs overshot for window movements.
-hl.curve("default",  { type = "bezier", points = { {.12, .92}, {.08, 1.0} } })
-hl.curve("wind",     { type = "bezier", points = { {.12, .92}, {.08, 1.0} } })
-hl.curve("overshot", { type = "bezier", points = { {.18, .95}, {.22, 1.03} } })
-hl.curve("linear",   { type = "bezier", points = { {0, 0}, {1, 1} } })
+--curves
+hl.curve("linear",   { type = "bezier", points = { {0, 0},       {1, 1}     } })
+hl.curve("ease",     { type = "bezier", points = { {0.25, 1},    {0.5, 1}   } }) -- floaty ease-out, no bounce
+hl.curve("overshot", { type = "bezier", points = { {0.05, 0.9},  {0.1, 1.05} } }) -- glides past the target, settles back
+hl.curve("bounce",   { type = "bezier", points = { {0.3, 1.2},   {0.6, 1}   } }) -- springy pop. raise 1.2 for more bounce
+hl.curve("butter",   { type = "bezier", points = { {0.25, 0.1},  {0.25, 1}  } }) -- gentle start, soft landing, no overshoot
 
 --window movements
-hl.animation({ leaf = "windows",     enabled = true, speed = 5,  bezier = "wind",     style = "popin 60%" })
-hl.animation({ leaf = "windowsIn",   enabled = true, speed = 6,  bezier = "overshot", style = "popin 60%" })
-hl.animation({ leaf = "windowsOut",  enabled = true, speed = 4,  bezier = "overshot", style = "popin 60%" })
-hl.animation({ leaf = "windowsMove", enabled = true, speed = 4,  bezier = "overshot", style = "slide" })
-hl.animation({ leaf = "layers",      enabled = true, speed = 4,  bezier = "default",  style = "popin" })
+hl.animation({ leaf = "windowsIn",   enabled = true, speed = 5,  bezier = "bounce",   style = "popin 80%" }) -- open: springy pop
+hl.animation({ leaf = "windowsOut",  enabled = true, speed = 4,  bezier = "ease",     style = "popin 80%" }) -- close: smooth, no bounce
+hl.animation({ leaf = "windowsMove", enabled = true, speed = 2,  bezier = "butter",   style = "slide" })     -- move/resize: smooth, no bounce
+
+--layers (waybar, rofi, notifications)
+hl.animation({ leaf = "layersIn",    enabled = true, speed = 4,  bezier = "bounce",   style = "popin 90%" })
+hl.animation({ leaf = "layersOut",   enabled = true, speed = 3,  bezier = "ease",     style = "popin 90%" })
 
 --fades
-hl.animation({ leaf = "fadeIn",      enabled = true, speed = 7,  bezier = "default" })
-hl.animation({ leaf = "fadeOut",     enabled = true, speed = 7,  bezier = "default" })
-hl.animation({ leaf = "fadeSwitch",  enabled = true, speed = 7,  bezier = "default" })
-hl.animation({ leaf = "fadeShadow",  enabled = true, speed = 7,  bezier = "default" })
-hl.animation({ leaf = "fadeDim",     enabled = true, speed = 7,  bezier = "default" })
-hl.animation({ leaf = "fadeLayers",  enabled = true, speed = 7,  bezier = "default" })
+hl.animation({ leaf = "fadeIn",      enabled = true, speed = 5,  bezier = "ease" })
+hl.animation({ leaf = "fadeOut",     enabled = true, speed = 5,  bezier = "ease" })
+hl.animation({ leaf = "fadeSwitch",  enabled = true, speed = 5,  bezier = "ease" })
+hl.animation({ leaf = "fadeShadow",  enabled = true, speed = 5,  bezier = "ease" })
+hl.animation({ leaf = "fadeDim",     enabled = true, speed = 5,  bezier = "ease" }) -- dim/undim on focus change
+hl.animation({ leaf = "fadeLayers",  enabled = true, speed = 5,  bezier = "ease" })
 
 --others
-hl.animation({ leaf = "workspaces",  enabled = true, speed = 5,  bezier = "overshot", style = "slidevert" }) --highly bouncy, may need to pull back.
+hl.animation({ leaf = "workspaces",  enabled = true, speed = 6,  bezier = "overshot", style = "slidefadevert 20%" }) --floaty vertical slide with a fade
 hl.animation({ leaf = "border",      enabled = true, speed = 1,  bezier = "linear" }) --almost instant border highlight on focus. try 1 vs 2.
 hl.animation({ leaf = "borderangle", enabled = true, speed = 24, bezier = "linear", style = "once" }) --was loop style, can be distracting as it slightly moves.
+
+---- dim exemptions ----
+-- games and video stay full brightness when you focus the other monitor
+hl.window_rule({
+    name   = "no-dim-media",
+    match  = { class = "^(steam_app_.*|gamescope|mpv)$" },
+    no_dim = true,
+})
+hl.window_rule({
+    name   = "no-dim-fullscreen",
+    match  = { fullscreen = true },
+    no_dim = true,
+})
+
+---- blur behind layers ----
+-- ignore_alpha: only blur where the layer is more than 50% opaque (the pills, not the empty bar area)
+hl.layer_rule({
+    name         = "waybar-blur",
+    match        = { namespace = "waybar" },
+    blur         = true,
+    ignore_alpha = 0.5,
+})
 
 ---- smart gaps ----
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
