@@ -1,6 +1,8 @@
-/* waybar: transparent pills. Neutral colors for now, palette comes with theme.lua work. */
+/* waybar: transparent pills. Colors come from the active theme (~/.config/themes/current). */
+@import url("/home/ryanm/.config/themes/current/colors.css");
+
 * {
-    font-family: "Iosevka Nerd Font";
+    font-family: "JetBrainsMono Nerd Font";
     font-weight: 500;          /* 400 = regular, 500 = medium, 600 = semibold, 700 = bold */
     font-size: 14px;
     min-height: 0;
@@ -10,11 +12,12 @@ window#waybar {
     background: transparent;
 }
 
-/* the three pills. Last number = opacity: 0 clear, 1 solid */
+/* the three pills. Second number in alpha() = opacity: 0 clear, 1 solid */
 .modules-left,
 .modules-center,
 .modules-right {
-    background: rgba(20, 22, 28, 0.85);
+    background: alpha(@bg_hard, 0.85);
+    border: 1px solid alpha(@fg4, 0.15);   /* keeps the pill visible on wallpapers that are bg_hard too */
     border-radius: 14px;
     padding: 2px 4px;          /* top/bottom  left/right */
 }
@@ -22,34 +25,37 @@ window#waybar {
 #cpu, #memory, #workspaces, #window, #clock, #custom-waypaper, #tray,
 #wireplumber, #mpris, #network, #custom-notifications, #custom-power {
     padding: 0 10px;
-    color: #e6e6e6;
+    color: @fg;
 }
 
 /* dividers between items inside each pill */
 #memory, #workspaces,
 #clock, #custom-waypaper,
 #wireplumber, #mpris, #network, #custom-notifications, #custom-power {
-    border-left: 1px solid rgba(255, 255, 255, 0.18);
+    border-left: 1px solid alpha(@fg4, 0.25);
 }
 
+/* workspaces: the buttons carry their own 6px, so trim the module's padding to match */
+#workspaces        { padding: 0 4px; }
 #workspaces button {
+    min-width: 0;
     padding: 0 6px;
-    color: #9a9a9a;
+    color: @gray;
     background: transparent;
     border: none;
     border-radius: 10px;
 }
 #workspaces button.active {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.12);
+    color: @bg_hard;
+    background: @accent;
 }
 #workspaces button:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: alpha(@fg, 0.08);
 }
 
-#wireplumber.muted          { color: #888888; }
-#custom-notifications.dnd   { color: #888888; }
-#custom-power               { color: #e5512e; }
+#wireplumber.muted          { color: @gray; }
+#custom-notifications.dnd   { color: @gray; }
+#custom-power               { color: @red; }
 
 /* blank workspace: collapse the empty title slot and drop the divider before the clock */
 window#waybar.empty #window {
@@ -59,6 +65,3 @@ window#waybar.empty #window {
 window#waybar.empty #clock {
     border-left: none;
 }
-
-#workspaces        { padding: 0 4px; }
-#workspaces button { min-width: 0; }

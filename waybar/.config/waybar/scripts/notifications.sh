@@ -1,9 +1,11 @@
-#!/bin/sh
-# Waybar: dunst notification count (JSON so it gets a tooltip).
+#!/usr/bin/env bash
+# waybar custom/notifications: text label + dunst history count
+# click: show last · right-click: toggle dnd · middle-click: clear history
+
+count=$(dunstctl count history)
+
 if [ "$(dunstctl is-paused)" = "true" ]; then
-    n=$(dunstctl count waiting)
-    printf '{"text":"󰂛 %s","tooltip":"Do Not Disturb on, %s held\\nRight-click: turn DND off","class":"dnd"}\n' "$n" "$n"
+    printf '{"text":"dnd %s","tooltip":"do not disturb (%s in history)","class":"dnd"}\n' "$count" "$count"
 else
-    n=$(dunstctl count history)
-    printf '{"text":"󰂚 %s","tooltip":"%s notifications\\nLeft: show last | Right: Do Not Disturb | Middle: clear all","class":"normal"}\n' "$n" "$n"
+    printf '{"text":"notif %s","tooltip":"%s in history","class":"normal"}\n' "$count" "$count"
 fi
