@@ -12,7 +12,7 @@
         "uptime",
         "packages",
         "shell",
-        "display",
+        { "type": "display", "key": "Display {index}", "format": "{width}x{height} @ {refresh-rate}Hz" },
         "de",
         "wm",
         "wmtheme",
