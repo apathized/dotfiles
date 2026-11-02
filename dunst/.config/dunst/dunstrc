@@ -38,3 +38,12 @@
     mouse_left_click = do_action, close_current
     mouse_middle_click = close_all
     mouse_right_click = close_current
+
+# hold notifications while a fullscreen window (game, video) is on the OLED;
+# they show up when you leave fullscreen. critical ones still come through.
+[fullscreen_delay_everything]
+    fullscreen = delay
+
+[fullscreen_show_critical]
+    msg_urgency = critical
+    fullscreen = show
