@@ -24,4 +24,8 @@ hl.on("hyprland.start", function()
     
     -- USB automount; tray icon only shows while a drive is plugged in
     hl.exec_cmd("uwsm app -- udiskie --appindicator --smart-tray")
+    -- Logitech device manager; starts hidden in the tray
+    hl.exec_cmd("uwsm app -- solaar --window=hide")
+    -- Discord client; starts minimized to tray
+    hl.exec_cmd("uwsm app -- vesktop --start-minimized")
 end)
