@@ -15,3 +15,4 @@ source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 
 # autocorrect thats never correct... good riddens...
 unsetopt correct correct_all
+eval "$(zoxide init zsh)"
