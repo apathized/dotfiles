@@ -5,6 +5,8 @@
 
 [global]
     font = "JetBrainsMono Nerd Font 11"
+    monitor = DP-1
+    follow = none
 
     # top-right, tucked under waybar (34px bar + 6px margin) and lined up with its 20px side margin
     origin = top-right
