@@ -5,7 +5,7 @@ configuration {
     modes:             "drun,clipboard:/home/ryanm/.config/rofi/scripts/clipboard.sh,keybinds:/home/ryanm/.config/rofi/scripts/keybinds.sh,settings:/home/ryanm/.config/rofi/scripts/settings.sh";
     show-icons:        true;
     icon-theme:        "Papirus-Dark";
-    font:              "JetBrainsMono Nerd Font 12";
+    font:              "JetBrainsMono Nerd Font 10";
 
     display-drun:      "apps";
     display-clipboard: "clipboard";
