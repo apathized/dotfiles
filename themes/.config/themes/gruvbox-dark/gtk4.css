@@ -1,0 +1,42 @@
+/* Gruvbox Dark for GTK4 + libadwaita (CSS variables, GTK 4.16+). GTK3 uses gtk.css instead. */
+:root {
+  --accent-color: #fe8019;
+  --accent-bg-color: #fe8019;
+  --accent-fg-color: #1d2021;
+  --destructive-color: #fb4934;
+  --destructive-bg-color: #cc241d;
+  --destructive-fg-color: #fbf1c7;
+  --success-color: #b8bb26;
+  --success-bg-color: #98971a;
+  --success-fg-color: #1d2021;
+  --warning-color: #fabd2f;
+  --warning-bg-color: #d79921;
+  --warning-fg-color: #1d2021;
+  --error-color: #fb4934;
+  --error-bg-color: #cc241d;
+  --error-fg-color: #fbf1c7;
+  --window-bg-color: #282828;
+  --window-fg-color: #ebdbb2;
+  --view-bg-color: #1d2021;
+  --view-fg-color: #ebdbb2;
+  --headerbar-bg-color: #1d2021;
+  --headerbar-fg-color: #ebdbb2;
+  --headerbar-border-color: #ebdbb2;
+  --headerbar-backdrop-color: #282828;
+  --headerbar-shade-color: rgba(0, 0, 0, 0.36);
+  --sidebar-bg-color: #1d2021;
+  --sidebar-fg-color: #ebdbb2;
+  --sidebar-backdrop-color: #1d2021;
+  --sidebar-shade-color: rgba(0, 0, 0, 0.36);
+  --card-bg-color: #3c3836;
+  --card-fg-color: #ebdbb2;
+  --card-shade-color: rgba(0, 0, 0, 0.36);
+  --dialog-bg-color: #282828;
+  --dialog-fg-color: #ebdbb2;
+  --popover-bg-color: #3c3836;
+  --popover-fg-color: #ebdbb2;
+  --thumbnail-bg-color: #3c3836;
+  --thumbnail-fg-color: #ebdbb2;
+  --shade-color: rgba(0, 0, 0, 0.36);
+  --scrollbar-outline-color: rgba(0, 0, 0, 0.5);
+}
