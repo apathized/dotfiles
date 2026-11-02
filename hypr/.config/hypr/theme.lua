@@ -132,6 +132,14 @@ hl.layer_rule({
     ignore_alpha = 0.5,
 })
 
+hl.layer_rule({
+    name         = "dunst-blur",
+    match        = { namespace = "notifications" },
+    blur         = true,
+    ignore_alpha = 0.5,
+    animation    = "slide right", -- notifications glide in from the screen edge
+})
+
 ---- smart gaps ----
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
