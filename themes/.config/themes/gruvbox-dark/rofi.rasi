@@ -1,0 +1,11 @@
+/* Gruvbox Dark (morhetz) for rofi. Imported by ~/.config/rofi/theme.rasi
+   bg is 90% opaque so the Hyprland blur shows through (frosted). */
+* {
+    bg:        #282828e6;
+    bg-alt:    #3c3836;
+    fg:        #ebdbb2;
+    fg-dim:    #a89984;
+    accent:    #fe8019;
+    on-accent: #1d2021;
+    outline:   #a8998440;
+}

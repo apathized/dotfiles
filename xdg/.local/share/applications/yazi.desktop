@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=File Explorer
+GenericName=yazi
+Comment=Browse files with yazi
+Exec=kitty --class yazi yazi %f
+Icon=system-file-manager
+Terminal=false
+Categories=System;FileTools;FileManager;
+Keywords=files;folder;explorer;yazi;

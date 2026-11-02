@@ -1,0 +1,22 @@
+/* rofi: behavior. Layout lives in theme.rasi, colors in the active theme folder.
+   Tab / Shift+Tab cycle modes: apps -> clipboard -> keybinds -> settings */
+
+configuration {
+    modes:             "drun,clipboard:/home/ryanm/.config/rofi/scripts/clipboard.sh,keybinds:/home/ryanm/.config/rofi/scripts/keybinds.sh,settings:/home/ryanm/.config/rofi/scripts/settings.sh";
+    show-icons:        true;
+    icon-theme:        "Papirus-Dark";
+    font:              "JetBrainsMono Nerd Font 12";
+
+    display-drun:      "apps";
+    display-clipboard: "clipboard";
+    display-keybinds:  "keybinds";
+    display-settings:  "settings";
+
+    /* Tab switches modes instead of moving down the list (arrows still move) */
+    kb-element-next:   "";
+    kb-element-prev:   "";
+    kb-mode-next:      "Tab,Shift+Right,Control+Tab";
+    kb-mode-previous:  "ISO_Left_Tab,Shift+Left,Control+ISO_Left_Tab";
+}
+
+@theme "/home/ryanm/.config/rofi/theme.rasi"

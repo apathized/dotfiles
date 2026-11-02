@@ -1,0 +1,86 @@
+/* rofi layout: rounded + frosted, matching the waybar pills.
+   Colors come from the active theme; blur comes from a Hyprland layer rule. */
+@import "/home/ryanm/.config/themes/current/rofi.rasi"
+
+* {
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    width:            600px;
+    padding:          14px;
+    border:           1px;
+    border-color:     @outline;
+    border-radius:    18px;
+    background-color: @bg;
+}
+
+mainbox {
+    spacing:  10px;
+    children: [ inputbar, listview, mode-switcher ];
+}
+
+/* search bar: mode name + search, accent outline */
+inputbar {
+    children:      [ prompt, entry ];
+    spacing:       10px;
+    padding:       10px 14px;
+    border:        2px;
+    border-radius: 12px;
+    border-color:  @accent;
+}
+prompt {
+    text-color: @fg;
+}
+entry {
+    placeholder:       "Search";
+    placeholder-color: @fg-dim;
+    cursor:            text;
+}
+
+listview {
+    lines:     8;
+    dynamic:   true;
+    scrollbar: false;
+    spacing:   4px;
+}
+
+element {
+    padding:       8px 12px;
+    spacing:       10px;
+    border-radius: 10px;
+}
+element selected.normal,
+element selected.active,
+element selected.urgent {
+    background-color: @accent;
+    text-color:       @on-accent;
+}
+element-icon {
+    size: 22px;
+}
+element-text {
+    text-color:     inherit;
+    vertical-align: 0.5;
+}
+
+/* mode tabs along the bottom (Tab / Shift+Tab) */
+mode-switcher {
+    spacing: 6px;
+}
+button {
+    padding:       6px;
+    border-radius: 10px;
+    text-color:    @fg-dim;
+}
+button selected {
+    background-color: @bg-alt;
+    text-color:       @accent;
+}
+
+message {
+    padding:       8px 12px;
+    border-radius: 10px;
+    background-color: @bg-alt;
+}
