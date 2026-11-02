@@ -3,7 +3,7 @@
 
 * {
     font-family: "JetBrainsMono Nerd Font";
-    font-weight: 500;          /* 400 = regular, 500 = medium, 600 = semibold, 700 = bold */
+    font-weight: 500;
     font-size: 14px;
     min-height: 0;
 }
@@ -12,14 +12,14 @@ window#waybar {
     background: transparent;
 }
 
-/* the three pills. Second number in alpha() = opacity: 0 clear, 1 solid */
+
 .modules-left,
 .modules-center,
 .modules-right {
     background: alpha(@bg_hard, 0.85);
-    border: 1px solid alpha(@fg4, 0.15);   /* keeps the pill visible on wallpapers that are bg_hard too */
+    border: 1px solid alpha(@fg4, 0.15);
     border-radius: 14px;
-    padding: 2px 4px;          /* top/bottom  left/right */
+    padding: 2px 4px;
 }
 
 #cpu, #memory, #workspaces, #window, #clock, #custom-waypaper, #tray,

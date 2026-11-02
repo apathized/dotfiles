@@ -1,4 +1,10 @@
-// fastfetch: default modules, font line trimmed to just the GTK font
+// ▐▓▓▓▓▌▐▓▓▓▓▌▐▓▓▓▓▌▐▓▓▓▓▓▌▐▓▓▓▓▌▐▓▓▓▓▌▐▓▓▓▓▓▌▐▓▓▓▓▌▐▓▌▐▓▌
+// ▐▓▌   ▐▓▌▐▓▌▐▓▌     ▐▓▌  ▐▓▌   ▐▓▌     ▐▓▌  ▐▓▌   ▐▓▌▐▓▌
+// ▐▓▓▓▌ ▐▓▓▓▓▌▐▓▓▓▓▌  ▐▓▌  ▐▓▓▓▌ ▐▓▓▓▌   ▐▓▌  ▐▓▌   ▐▓▓▓▓▌
+// ▐▓▌   ▐▓▌▐▓▌   ▐▓▌  ▐▓▌  ▐▓▌   ▐▓▌     ▐▓▌  ▐▓▌   ▐▓▌▐▓▌
+// ▐▓▌   ▐▓▌▐▓▌▐▓▓▓▓▌  ▐▓▌  ▐▓▌   ▐▓▓▓▓▌  ▐▓▌  ▐▓▓▓▓▌▐▓▌▐▓▌
+
+//Sorry. Wish we could go to the moon together.
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": { "type": "file", "source": "/home/ryanm/.config/fastfetch/logo.txt", "color": { "1": "38;2;251;73;52" }, "padding": { "top": 1, "right": 4 } },

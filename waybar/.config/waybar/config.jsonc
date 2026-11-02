@@ -1,5 +1,9 @@
-// waybar: top bar on the OLED, three transparent pills (left / center / right)
-// text labels everywhere; the only icons are the tray (running apps) and waypaper
+//▐▓▌ ▐▓▌▐▓▓▓▓▌▐▓▌ ▐▓▌▐▓▓▓▓▌ ▐▓▓▓▓▌▐▓▓▓▓▌
+//▐▓▌ ▐▓▌▐▓▌▐▓▌ ▐▓▐▓▌ ▐▓▌ ▐▓▌▐▓▌▐▓▌▐▓▌▐▓▌
+//▐▓▐▓▐▓▌▐▓▓▓▓▌  ▐▓▌  ▐▓▓▓▓▓▌▐▓▓▓▓▌▐▓▓▓▓▌
+//▐▓▐▓▐▓▌▐▓▌▐▓▌  ▐▓▌  ▐▓▌ ▐▓▌▐▓▌▐▓▌▐▓▐▓▌ 
+//▐▓▓▓▓▓▌▐▓▌▐▓▌  ▐▓▌  ▐▓▓▓▓▌ ▐▓▌▐▓▌▐▓▌▐▓▌
+
 {
     "output": "DP-1",
     "layer": "top",
@@ -59,7 +63,6 @@
         "format-paused": "paused · {dynamic}",
         "dynamic-len": 40
     },
-    // not in modules-right (nm-applet covers it); kept here in case you want it back
     "network": {
         "format-ethernet": "eth",
         "format-wifi": "wifi {essid}",

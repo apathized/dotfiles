@@ -14,18 +14,15 @@ Notes:
 hl.on("hyprland.start", function()
     -- Make the OLED XWayland's primary, so Proton games open there (fixes rl and deadlock.)
     hl.exec_cmd("xrandr --output DP-1 --primary")
-
     -- Clipboard history
     hl.exec_cmd("uwsm app -- wl-paste --watch cliphist store")
-
     -- Wallpaper daemon
     hl.exec_cmd("uwsm app -- awww-daemon")
     hl.exec_cmd("sleep 1; waypaper --restore")
-    
-    -- USB automount; tray icon only shows while a drive is plugged in
+    -- USB automount
     hl.exec_cmd("uwsm app -- udiskie --appindicator --smart-tray")
-    -- Logitech device manager; starts hidden in the tray
+    -- Logitech device manager
     hl.exec_cmd("uwsm app -- solaar --window=hide")
-    -- Discord client; starts minimized to tray
+    -- Discord client
     hl.exec_cmd("uwsm app -- vesktop --start-minimized")
 end)
