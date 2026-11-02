@@ -17,10 +17,12 @@
 
     "cpu": {
         "format": "cpu {usage}%",
+        "on-click": "pkill -x btop || kitty --class btop btop",
         "interval": 2
     },
     "memory": {
         "format": "ram {used:0.1f}G",
+        "on-click": "pkill -x btop || kitty --class btop btop",
         "interval": 5,
         "tooltip-format": "{used:0.1f} / {total:0.1f} GiB"
     },

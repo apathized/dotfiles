@@ -123,3 +123,10 @@ hl.window_rule({
     float  = true,
     center = true,
 })
+
+-- keep the screen awake while anything is fullscreen (games, video), even apps that don't ask
+hl.window_rule({
+    name         = "idle-fullscreen",
+    match        = { class = ".*" },
+    idle_inhibit = "fullscreen",
+})
