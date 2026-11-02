@@ -1,0 +1,21 @@
+# yazi: personal keybinds for ease of use
+
+[[mgr.prepend_keymap]]
+on   = "<Delete>"
+run  = "remove"
+desc = "Move to trash"
+
+[[mgr.prepend_keymap]]
+on   = "<S-Delete>"
+run  = "remove --permanently"
+desc = "Delete permanently"
+
+[[mgr.prepend_keymap]]
+on   = ["g", "t"]
+run  = "cd ~/.local/share/Trash/files"
+desc = "Go to trash"
+
+[[mgr.prepend_keymap]]
+on   = "u"
+run  = "plugin restore"
+desc = "Restore last trashed files"

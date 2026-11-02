@@ -1,0 +1,9 @@
+[[plugin.deps]]
+use = "boydaihungst/restore"
+rev = "864dd05"
+hash = "3070b579618c4831f5d7ca4293c1c275"
+
+[[flavor.deps]]
+use = "bennyyip/gruvbox-dark"
+rev = "71b03f6"
+hash = "fc8fb278e5e1ede76b7a57c76a6db28b"
