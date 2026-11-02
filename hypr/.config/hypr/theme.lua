@@ -158,3 +158,10 @@ hl.layer_rule({
 --     border_size = 0,
 --     rounding    = 0,
 -- })
+
+hl.layer_rule({
+    name         = "rofi-blur",
+    match        = { namespace = "rofi" },
+    blur         = true,
+    ignore_alpha = 0.5,
+})

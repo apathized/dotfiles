@@ -79,10 +79,11 @@ hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd("pkill -x btop || " .. sysMo
 
 --straight one for one translated from the HyDE file. todo: un-hydeify this.
 hl.bind(mainmod .."+ SPACE", hl.dsp.exec_cmd("pkill -x rofi || " .. menu), {description = "Rofi Application Finder"})
---HYDE: hl.bind(mainmod .. " + slash",     hl.dsp.exec_cmd("pkill -x rofi || hyde-shell keybinds_hint c"),  { description = "Keybinds hint" })
+hl.bind(mainmod .. " + slash", hl.dsp.exec_cmd("pkill -x rofi || rofi -show keybinds"), { description = "Keybind cheat sheet" })
+hl.bind(mainmod .. " + V",     hl.dsp.exec_cmd("pkill -x rofi || rofi -show clipboard"), { description = "Clipboard history" })
+hl.bind(mainmod .. " + I",     hl.dsp.exec_cmd("pkill -x rofi || rofi -show settings"), { description = "System settings" })
 --HYDE: hl.bind(mainmod .. " + comma",     hl.dsp.exec_cmd("pkill -x rofi || hyde-shell emoji-picker"),     { description = "Emoji picker" })
 --HYDE: hl.bind(mainmod .. " + period",    hl.dsp.exec_cmd("pkill -x rofi || hyde-shell glyph-picker"),     { description = "Glyph picker" })
---HYDE: hl.bind(mainmod .. " + V",         hl.dsp.exec_cmd("pkill -x rofi || hyde-shell cliphist -c"),      { description = "Clipboard" })
 --HYDE: hl.bind(mainmod .. " + SHIFT + V", hl.dsp.exec_cmd("pkill -x rofi || hyde-shell cliphist"),         { description = "Clipboard manager" })
 --HYDE: hl.bind(mainmod .. " + SHIFT + A", hl.dsp.exec_cmd("pkill -x rofi || hyde-shell rofiselect"),       { description = "Rofi launcher select" })
 
