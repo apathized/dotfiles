@@ -1,0 +1,38 @@
+# dunst: layout only.
+# Colors come from the active theme via dunstrc.d/50-theme.conf
+# (a link to ~/.config/themes/current/dunst.conf).
+# Anything not set here falls back to the system defaults in /etc/xdg/dunst/dunstrc.
+
+[global]
+    font = "JetBrainsMono Nerd Font 11"
+
+    # top-right, tucked under waybar (34px bar + 6px margin) and lined up with its 20px side margin
+    origin = top-right
+    offset = (20, 50)
+    width = 360
+    notification_limit = 5
+
+    # separate rounded bubbles, same feel as the waybar pills
+    gap_size = 6
+    corner_radius = 14
+    frame_width = 1
+    padding = 12
+    horizontal_padding = 14
+    text_icon_padding = 12
+
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    ellipsize = end
+    show_age_threshold = 60
+
+    progress_bar_corner_radius = 4
+    progress_bar_frame_width = 0
+
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
