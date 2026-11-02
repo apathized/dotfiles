@@ -16,3 +16,6 @@ hl.config({
         disable_hyprland_guiutils_check = true,
     },
 })
+
+hl.env("XCURSOR_THEME", "Simp1e-Gruvbox-Dark")
+hl.env("XCURSOR_SIZE", "24")
