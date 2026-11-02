@@ -1,0 +1,43 @@
+/* ReGreet: Gruvbox Dark, matching the desktop (waybar pills, dunst).
+   Plain copy in ~/dotfiles/system/etc/greetd/, installed with sudo cp (the greeter can't read $HOME). */
+:root {
+  --accent-color: #fe8019;
+  --accent-bg-color: #fe8019;
+  --accent-fg-color: #1d2021;
+  --window-bg-color: #282828;
+  --window-fg-color: #ebdbb2;
+  --view-bg-color: #282828;
+  --view-fg-color: #ebdbb2;
+  --card-bg-color: #3c3836;
+  --card-fg-color: #ebdbb2;
+  --popover-bg-color: #3c3836;
+  --popover-fg-color: #ebdbb2;
+  --dialog-bg-color: #282828;
+  --dialog-fg-color: #ebdbb2;
+  --headerbar-bg-color: #1d2021;
+  --headerbar-fg-color: #ebdbb2;
+  --destructive-color: #fb4934;
+  --destructive-bg-color: #cc241d;
+  --destructive-fg-color: #fbf1c7;
+}
+/* the login box, clock and power buttons: same feel as the waybar pills */
+frame {
+  background-color: rgba(40, 40, 40, 0.9);
+  border-radius: 14px;
+}
+frame > border {
+  border: 1px solid rgba(168, 153, 132, 0.25);
+  border-radius: 14px;
+}
+/* text fields: a shade darker than the panel */
+entry {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+button {
+  border-radius: 10px;
+}
+/* secondary text in Gruvbox fg4 */
+label.dim-label {
+  color: #a89984;
+}

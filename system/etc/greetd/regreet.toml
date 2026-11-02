@@ -1,5 +1,7 @@
 [GTK]
 application_prefer_dark_theme = true
+theme_name = "adw-gtk3"
+icon_theme_name = "Papirus-Dark"
 font_name = "JetBrainsMono Nerd Font 14"
 
 [appearance]
